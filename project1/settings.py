@@ -25,6 +25,7 @@ SECRET_KEY = 'django-insecure--*&^62!7@5ik_3r+)o)+l(-adr9kco69qbj31+wx3#x6)454'
 DEBUG = False
 ALLOWED_HOSTS = ['django-project1-gym1.onrender.com']
 
+
 # Application definition
 
 INSTALLED_APPS = [
