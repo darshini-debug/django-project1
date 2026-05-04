@@ -116,3 +116,12 @@ STATICFILES_DIRS = [
  BASE_DIR / "static"
 
 ]
+
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+
+DEBUG = False
+ALLOWED_HOSTS = ['home.onrender.com']
+
