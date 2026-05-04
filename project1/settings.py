@@ -26,8 +26,10 @@ DEBUG = False
 ALLOWED_HOSTS = ['django-project1-gym1.onrender.com']
 
 
+CSRF_TRUSTED_ORIGINS = ['https://django-project1-gym1.onrender.com']
 # Application definition
-
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 INSTALLED_APPS = [
  'home.apps.HomeConfig',
  'django.contrib.admin',
@@ -39,6 +41,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+  'django.middleware.security.SecurityMiddleware',
+  'whitenoise.middleware.WhiteNoiseMiddleware',
  'django.middleware.security.SecurityMiddleware',
  'django.contrib.sessions.middleware.SessionMiddleware',
  'django.middleware.common.CommonMiddleware',
@@ -47,7 +51,7 @@ MIDDLEWARE = [
  'django.contrib.messages.middleware.MessageMiddleware',
  'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 ROOT_URLCONF = 'project1.urls'
 
 TEMPLATES = [
@@ -116,12 +120,4 @@ STATICFILES_DIRS = [
  BASE_DIR / "static"
 
 ]
-
-
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-
-DEBUG = False
-ALLOWED_HOSTS = ['home.onrender.com']
 
