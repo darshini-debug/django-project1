@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}About Us{% endblock title %}
+
+{% block body %}
+
+<div class="container-fluid px-0">
+ <img src="{% static 'about.jpg' %}"
+ class="d-block w-100"
+ style="height:700px; object-fit: cover;">
+</div>
+
+<div class="container my-3">
+
+ <h1 class="text-center mb-4">About Us</h1>
+
+ <p class="text-center">
+ Welcome to our website! We are passionate about delivering quality services
+ and ensuring customer satisfaction.
+ </p>
+
+ <div class="row mt-5">
+
+ <div class="col-md-4">
+ <div class="card shadow p-3">
+ <h3>Our Mission</h3>
+ <p>To provide high-quality services that make people's lives better.</p>
+ </div>
+ </div>
+
+ <div class="col-md-4">
+ <div class="card shadow p-3">
+ <h3>Our Vision</h3>
+ <p>To become a trusted name known for innovation and excellence.</p>
+ </div>
+ </div>
+
+ <div class="col-md-4">
+ <div class="card shadow p-3">
+ <h3>Our Values</h3>
+ <p>Integrity, dedication, and customer-first approach.</p>
+ </div>
+ </div>
+
+ </div>
+
+</div>
+<div class="mt-5">
+ <h2 class="text-center">Our Team</h2>
+
+ <div class="row mt-4">
+ <div class="col-md-4 text-center">
+ <img src="{% static 'team1.jpg' %}" class="rounded-circle" width="120">
+ <h5>Priya</h5>
+ <p>Developer</p>
+ </div>
+ </div>
+</div>
+<div class="text-center mt-4">
+ <a href="{% url 'contact' %}" class="btn btn-primary">
+    </a>
+ </div
+
+{% endblock body %}

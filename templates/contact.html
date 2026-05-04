@@ -1,0 +1,55 @@
+ {% extends "base.html" %}
+{% load static %}
+
+{% block title %} contact{% endblock title %}
+
+{% block body %}
+<div class="container-fluid px-0">
+ <img src="{% static 'contact1.jpg' %}"
+ class="d-block w-100"
+ style="height: 450px; object-fit: cover;">
+</div>
+
+<div class="container my-3">
+ <h1 class="text-center">Contact Us</h1>
+
+ {% if error %}
+ <div class="alert alert-danger">
+ {{ error }}
+ </div>
+ {% endif %}
+
+<form method="post" action="{% url 'contact' %}"> 
+ {% csrf_token %}
+
+<!-- Name -->
+ <div class="form-group">
+ <label for="name">Name</label>
+ <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+ </div>
+
+<!-- Email -->
+ <div class="form-group">
+ <label for="email">Email address</label>
+ <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+ </div>
+
+<!-- Phone -->
+ <div class="form-group">
+ <label for="phone">Phone</label>
+ <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter your phone number">
+ </div>
+
+<!-- Description -->
+ <div class="form-group">
+ <label for="desc">Tell me about what you want to contact me for......</label>
+ <textarea class="form-control" id="desc" rows="3" name="desc"></textarea>
+ </div>
+
+<!-- Submit -->
+ <button type="submit" class="btn btn-primary">Submit</button>
+
+ </form>
+</div>
+
+{% endblock body %}
